@@ -1,8 +1,12 @@
-FROM alpine:edge
+FROM xtremxpert/alpine:latest
 
-MAINTAINER Paolo Sechi
+MAINTAINER XtremXpert
 
-RUN apk --update add haproxy rsyslog inotify-tools
+RUN apk --update add \
+  haproxy \
+  rsyslog \
+  inotify-tools
+  
 COPY haproxy.run /home/haproxy/haproxy.run
 RUN chmod +x /home/haproxy/haproxy.run
 
